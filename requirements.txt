@@ -1,0 +1,5 @@
+TensorFlow==2.12.0
+OpenCVforPython==4.8.0.74
+Keras==2.12.0 
+Pandas==1.5.3 
+Numpy==1.24.3
