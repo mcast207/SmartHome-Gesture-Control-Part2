@@ -93,5 +93,5 @@ for img in testX:
 
     outputCsv.append(gestureDict[gestureName])
 
-# Output to csv as a 51 x 1
+# Output to csv as a 51 x 1 matrix
 np.savetxt(result, outputCsv, fmt='%i', delimiter=',')
