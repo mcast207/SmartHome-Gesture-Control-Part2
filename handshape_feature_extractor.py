@@ -1,3 +1,4 @@
+import os.path
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -10,7 +11,6 @@ Model = keras.models.Model
 This is a Singleton class which bears the ml model in memory
 model is used to extract handshape 
 """
-import os.path
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -30,7 +30,8 @@ class HandShapeFeatureExtractor:
             HandShapeFeatureExtractor.__single = self
 
         else:
-            raise Exception("This Class bears the model, so it is made Singleton")
+            raise Exception(
+                "This Class bears the model, so it is made Singleton")
 
     # private method to preprocess the image
     @staticmethod
@@ -69,5 +70,3 @@ class HandShapeFeatureExtractor:
             return self.model.predict(img_arr)
         except Exception as e:
             raise
-
-

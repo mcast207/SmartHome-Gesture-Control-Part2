@@ -27,9 +27,9 @@ gestureDict = {'Num0': 0,
 # Path variables
 root = os.path.dirname(os.path.abspath(__file__))
 testDirectory = root + "/" + "test"
-testFrames = root + "/testframes"
 trainDirectory = root + "/" + "traindata"
-trainFrames = root + "/trainframes"
+testFrameDirectory = testDirectory + "/frames"
+trainFrameDirectory = trainDirectory + "/frames"
 result = root + "/" + "Results.csv"
 
 
@@ -41,6 +41,7 @@ def fileNameList(path):
 
 
 def extractFeatures(videoDir, framesDir):
+
     videolist = fileNameList(videoDir)
     features = []
     label = {}
@@ -66,8 +67,8 @@ def extractFeatures(videoDir, framesDir):
     return features, label
 
 
-trainX, trainlabel = extractFeatures(trainDirectory, trainFrames)
-testX, testlabel = extractFeatures(testDirectory, testFrames)
+trainX, trainlabel = extractFeatures(trainDirectory, trainFrameDirectory)
+testX, testlabel = extractFeatures(testDirectory, testFrameDirectory)
 
 
 for img in testX:
